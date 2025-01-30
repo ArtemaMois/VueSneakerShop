@@ -26,7 +26,9 @@ services:
         - ./nginx/nginx.conf:/etc/nginx/nginx.conf
         - ./frontend:/var/www/frontend
       ports:
-        - 80:80
+        - 90:80
+      depends_on:
+        - frontend
 
   app:
       container_name: app-backend
@@ -38,6 +40,7 @@ services:
       working_dir: /var/www/backend
       environment:
           - TZ=Europe/Moscow
+
 
   frontend:
       container_name: app-frontend
@@ -51,19 +54,4 @@ services:
       volumes:
         - ./frontend:/app
       command: npm run serve
-
-  rabbitmq:
-      container_name: app-rabbitmq
-      env_file: 
-        - .env
-      image: rabbitmq:4-management
-      hostname: ${RABBITMQ_HOSTNAME}
-      environment:
-        RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_PASSWORD}
-        RABBITMQ_DEFAULT_PASSWORD: ${RABBITMQ_DEFAULT_PASSWORD}
-        RABBITMQ_DEFAULT_VHOST: /
-      volumes:
-        - ./rabbitmq/data:/var/lib/rabbitmq
-      ports:
-        - ${RABBITMQ_CLI_PORT}:5672 # (erlang) communication between the nodes and CLI tool
-        - ${RABBITMQ_WEB_PORT}:15672 # communication with the web management API     
+ 
