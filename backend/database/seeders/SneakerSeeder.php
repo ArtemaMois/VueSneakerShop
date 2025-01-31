@@ -21,7 +21,7 @@ class SneakerSeeder extends Seeder
         Sneaker::factory()->create([
             'title' => 'Мужские Кроссовки Nike Air Max 270',
             'cost' => 12999,
-            'img' => '/icons/sneakers/sneakers-2.jpg"',
+            'img' => '/icons/sneakers/sneakers-2.jpg',
             'isLiked' => false,
             'inCart' => false
         ]);
@@ -105,7 +105,7 @@ class SneakerSeeder extends Seeder
         Sneaker::factory()->create([
             'title' => 'Мужские Кроссовки Nike Air Max 270',
             'cost' => 12999,
-            'img' => '/icons/sneakers/sneakers-2.jpg"',
+            'img' => '/icons/sneakers/sneakers-2.jpg',
             'isLiked' => false,
             'inCart' => false
         ]);
@@ -189,7 +189,7 @@ class SneakerSeeder extends Seeder
         Sneaker::factory()->create([
             'title' => 'Мужские Кроссовки Nike Air Max 270',
             'cost' => 12999,
-            'img' => '/icons/sneakers/sneakers-2.jpg"',
+            'img' => '/icons/sneakers/sneakers-2.jpg',
             'isLiked' => false,
             'inCart' => false
         ]);

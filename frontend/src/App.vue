@@ -30,7 +30,11 @@ a{
   text-decoration: none;
   color: transparent
 }
-
+input, input:hover, input:focus, input:active {
+  border: none;
+  outline: none;
+  all: unset;
+}
 .container{
   padding-inline: 60px;
 }

@@ -4,7 +4,6 @@ import axios from "axios";
 export function useSneakers()
 {
     const sneakers = ref([]);
-    const page = ref(0);
     const nextPagerRef = ref('');
 
     const fetching = async () => {

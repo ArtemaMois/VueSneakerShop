@@ -1,42 +1,31 @@
 <template>
     <div>
-        <button class="ref" @click="openCart">
+        <button class="ref" @click="opencCart">
                 <img src="/icons/cart.svg" alt="">
                 {{ cartCost }} руб.
         </button>
         <my-sidebar :is-visibility="isVisibility" @hideSidebar="hideCart"></my-sidebar>
     </div>
 </template>
-<script>
+<script setup>
+import { ref } from 'vue';
 import MySidebar from './MySidebar.vue';
 
-export default {
-    components: {
-        MySidebar
-    },
-    data()
-    {
-        return {
-            isVisibility: false
-        }
-    },
-    props: {
+    const isVisibility = ref(false);
+    defineProps({
         cartCost: {
             type: String,
             required: true
         }
-    }, 
-    methods: {
-        openCart()
-        {
-            this.isVisibility = true;
-        },
-        hideCart()
-        {
-            this.isVisibility = false;
-        }
+    });
+
+    const opencCart = () => {
+        isVisibility.value = true;
+    };
+
+    const hideCart = () => {
+        isVisibility.value = false;
     }
-}
 
 </script>
 <style>

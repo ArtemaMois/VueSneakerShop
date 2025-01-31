@@ -1,7 +1,7 @@
 <template>
         <div class="cart">
             <div class="cart__header">
-                <button @click="hideCart" class="cart__hide-button">
+                <button @click="$emit('hideCart')" class="cart__hide-button">
                     <svg class="cart__hide-arrow" width="25" height="25" viewBox="0 0 16 14" fill="gray" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 7H14.7143" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M8.71436 1L14.7144 7L8.71436 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -23,28 +23,12 @@
             </div>
         </div>
 </template>
-<script>
+<script setup>
 import { useStore } from 'vuex';
 import SneakerCartList from './SneakerCartList.vue';
-export default {
-    components: {
-        SneakerCartList
-    },
-    setup()
-    {
-        const store = useStore();
 
-        return {
-            store
-        }
-    },
-    methods: {
-        hideCart()
-        {
-            this.$emit('hideCart');
-        }
-    }
-}
+const store = useStore();
+
 </script>
 <style>
 

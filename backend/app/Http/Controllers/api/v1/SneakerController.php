@@ -10,7 +10,7 @@ class SneakerController extends Controller
 {
     public function index(Request $request)
     {
-        $sneakers = Sneaker::query()->paginate(5);
+        $sneakers = Sneaker::query()->paginate(10);
         return response()->json(['status' => 'success', 'sneakers' => $sneakers]);
     }
 }

@@ -35,6 +35,5 @@ import { useRemoveLikedItem } from '../composable/useRemoveLikedItem';
     grid-template-columns: 210px 210px 210px 210px;
     column-gap: 60px;
     row-gap: 40px;
-    
 }
 </style>
