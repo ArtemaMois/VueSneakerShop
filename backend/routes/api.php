@@ -15,4 +15,5 @@ Route::controller(SneakerController::class)
 ->group(function ()
 {
     Route::get('/', 'index')->name('sneakers.index');
+    // Route::get('/test', 'test')->name('sneakers.test');
 });

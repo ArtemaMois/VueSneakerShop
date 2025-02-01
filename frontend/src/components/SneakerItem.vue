@@ -14,7 +14,7 @@
     </button>
     <div class="card__content">
         <img :src="sneaker.img"  alt="" class="card__img">
-        <div class="card__title">{{ sneaker.title }}</div>
+        <div class="card__title" :title="sneaker.title" >{{ sneaker.title }}</div>
         <div class="card__footer">
             <div class="card__cost">
                 <div class="card__cost-title">Цена:</div>
